@@ -1,0 +1,8 @@
+version = "0.0.1"
+description = "ssl support for uwt"
+requires = "ssl uwt"
+archive(byte) = "uwt-ssl.cma"
+archive(byte, plugin) = "uwt-ssl.cma"
+archive(native) = "uwt-ssl.cmxa"
+archive(native, plugin) = "uwt-ssl.cmxs"
+exists_if = "uwt-ssl.cma"

@@ -1,0 +1,17 @@
+.PHONY: clean distclean doc lib
+.DEFAULT: lib
+
+section
+	FILES=uwt_ssl
+	Repeat_targets($(FILES))
+	UWTSSL=	$(MOCamlLibrary $(PROJNAME), $(FILES))
+	x=$(CreateDoc uwt-ssl,html,$(UWTSSL))
+	lib:: $(UWTSSL)
+	Install_helper($(PROJNAME),$(UWTSSL),$(EMPTY))
+
+clean::
+	clean-helper()
+	rm -f oUnit*.log setup.data setup.log *.tar*
+
+distclean:: clean
+	rm -f *~ .*~ setup.ml _oasis *.xz *.gz

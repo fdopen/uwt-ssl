@@ -1,0 +1,20 @@
+opam-version: "1.2"
+name: "uwt-ssl"
+version: "0.0.1"
+maintainer: "andreashauptmann@t-online.de"
+authors: [ "andreashauptmann@t-online.de" ]
+homepage: "https://github.com/fdopen/uwt-ssl"
+dev-repo: "https://github.com/fdopen/uwt-ssl.git"
+bug-reports: "https://github.com/fdopen/uwt-ssl/issues"
+build: [["omake" "lib"]]
+install: [["omake" "install"]]
+build-test: [["omake" "test"]]
+remove: [["ocamlfind" "remove" "uwt-ssl"]]
+available: [ocaml-version >= "4.02.1"]
+license: "LGPL-2.1+ with OCaml linking exception"
+depends: [
+  "uwt" { > "0.0.4" }
+  "ssl" { >= "0.5.3" }
+  "ocamlfind" {build}
+  "omake" {build}
+]

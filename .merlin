@@ -1,0 +1,8 @@
+PRJ uwt-ssl
+PKG lwt
+PKG uwt
+PKG ssl
+S src
+B src
+#S test
+#B test
